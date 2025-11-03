@@ -1,6 +1,5 @@
 import type { JSX } from "react";
 import { motion } from "framer-motion";
-import profilePic from "../assets/images/profile.jpg";
 import AnimatedButton from "../components/AnimatedButton";
 
 interface HeaderProps {
@@ -17,6 +16,7 @@ export default function HeaderComponent({ title, subtitle }: HeaderProps): JSX.E
       id="home"
       className="h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white p-10 relative overflow-hidden"
     >
+      {/* Animated particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(50)].map((_, i) => (
           <motion.div
@@ -43,6 +43,8 @@ export default function HeaderComponent({ title, subtitle }: HeaderProps): JSX.E
           />
         ))}
       </div>
+
+      {/* Title */}
       <motion.h1 className="text-4xl md:text-6xl font-bold mb-4 text-center flex flex-wrap justify-center z-10">
         {titleWords.map((word, index) => (
           <motion.span
@@ -55,6 +57,8 @@ export default function HeaderComponent({ title, subtitle }: HeaderProps): JSX.E
           </motion.span>
         ))}
       </motion.h1>
+
+      {/* Subtitle */}
       <motion.p className="text-lg md:text-xl text-gray-200 max-w-xl text-center flex flex-wrap justify-center z-10">
         {subtitleWords.map((word, index) => (
           <motion.span
@@ -68,19 +72,24 @@ export default function HeaderComponent({ title, subtitle }: HeaderProps): JSX.E
           </motion.span>
         ))}
       </motion.p>
+
+      {/* Buttons */}
       <motion.div
-        className="absolute top-24 right-10 w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-gray-500 overflow-hidden shadow-lg z-10"
-        initial={{ scale: 0.8 }}
-        animate={{ scale: [0.95, 1.05, 0.95], y: [0, -8, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="mt-8 flex space-x-4 z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.6 }}
       >
-        <img src={profilePic} alt="Me" className="w-full h-full object-cover" />
-      </motion.div>
-      <motion.div className="mt-8 flex space-x-4 z-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.6 }}>
         <AnimatedButton href="#projects">View Projects</AnimatedButton>
         <AnimatedButton href="#contact">Contact Me</AnimatedButton>
       </motion.div>
-      <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }} className="absolute bottom-10 z-10">
+
+      {/* Scroll indicator */}
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-10 z-10"
+      >
         <span className="text-gray-400 text-2xl animate-bounce">↓</span>
       </motion.div>
     </section>

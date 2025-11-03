@@ -1,3 +1,4 @@
+// @ts-ignore: no declaration file for HeaderComponent
 import HeaderComponent from "../components/HeaderComponent";
 import AboutSection from "../components/AboutSection";
 import ProjectsSection from "../components/ProjectsSection";
