@@ -4,7 +4,6 @@ export default function ContactSection() {
   const contacts = [
     { name: "LinkedIn", url: "https://www.linkedin.com/in/clarence-kenneth-acedillo-756a9038b/", color: "text-blue-400" },
     { name: "Indeed", url: "https://profile.indeed.com/?hl=en_PH&co=PH&from=gnav-homepage", color: "text-blue-500" },
-    { name: "Facebook", url: "https://www.facebook.com/kenshiroSpongeColaInTheHause/", color: "text-blue-700" },
     { name: "Primary Email", url: "mailto:kennethace02@gmail.com", color: "text-cyan-400" },
     { name: "Work Email", url: "mailto:kennethacedillo@gmail.com", color: "text-cyan-400" },
     { name: "Other Email", url: "mailto:shirootagawa@gmail.com", color: "text-cyan-400" },
