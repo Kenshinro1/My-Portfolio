@@ -33,7 +33,7 @@ export default function ContactSection() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
-        Feel free to connect with me on LinkedIn, Indeed, Facebook, or via email.
+        Feel free to connect with me on LinkedIn, Indeed, or via email.
       </motion.p>
 
       <motion.div
